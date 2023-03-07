@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Recomendador de Música</title>
+
+    <!-- Custom fonts for this template-->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='vendor/fontawesome-free/css/all.min.css') }}">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link rel= "stylesheet" href= "{{ url_for('static',filename='css/sb-admin-2.min.css') }}">
+
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url_for('index') }}">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fa-solid fa-music"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">RECOMENDADOR DE MÚSICA</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+                        <!-- Nav Item - CDA -->
+            <li class="nav-item">
+                <a class="nav-link"> <span>MINE-4201<br> Sistemas de Recomendación <br> Univerisdad de los Andes</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Integrantes
+            </div>
+
+            <!-- members list -->
+            <li class="nav-item">
+                <a class="nav-link">
+                    <i class="fas fa-female"></i>
+                    <span>Yeimy Cano <br> Login: y.cano</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">
+                    <i class="fas fa-male"></i>
+                    <span>Julián Sanabria <br> Login: jj.sanabria</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">
+                    <i class="fas fa-male"></i>
+                    <span>Julián Barreto<br> Login: c.barretom</span>
+                </a>
+            </li>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    {% block titulo %}
+                    <h3 >Tus Recomendaciones</h3>
+                    {% endblock %}
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 media">{{ usuario }}</span>
+                                <img class="img-profile rounded-circle" {{ imagen }} >
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="{{ url_for('login') }}">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Perfil
+                                </a>
+                                <a class="dropdown-item" href="{{ url_for('index') }}">
+                                    <i class="fa-solid fa-music fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Tus Recomendaciones
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ url_for('login') }}">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                {% block contenido %}
+                <!-- Begin Page Content -->
+                <div class="container">
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="col-lg-5.5">
+                            <div class="p-5">
+                                <div class="text-left">
+                                    <h4>Tus Artistas Favoritos</h4>
+                                    <hr>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="col-lg-5.5">
+                            <div class="p-5">
+                                <div class="text-left">
+                                    <h4>Te Recomendamos</h4>
+                                    <hr>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="col-lg-5.5">
+                            <div class="p-5">
+                                <div class="text-left">
+                                    <h4>A usuario como tu también le gustaron</h4>
+                                    <hr>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+                {% endblock %}
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Uniandes 2022</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="./static/vendor/jquery/jquery.min.js"></script>
+    <script src="./static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="./static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="./static/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="./static/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="./static/js/demo/chart-area-demo.js"></script>
+    <script src="./static/js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>
