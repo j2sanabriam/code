@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+
+
+{% block head %}
+{% endblock %}
+
+{% block titulo %}
+<h3 >Perfíl de Usuario</h3>
+{% endblock %}
+
+
+{% block contenido %}
+<!-- Begin Page Content -->
+<div class="container">
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="col-lg-11">
+            <div class="p-5">
+                <div class="text-center">
+                    <h4>{{ usuario }}</h4>
+                    <hr>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2 mb-2 mb-sm-0 text-right">
+                        <label for="profileGender">Género :</label>
+                    </div>
+                    <div class="col-sm-3 mb-3 mb-sm-0">
+                         <input type="text" id="profileGender" class="form-control form-control-user"
+                            name="profileGender" placeholder="{{ genero }}" disabled>
+                    </div>
+                    <div class="col-sm-2 mb-2 mb-sm-0 text-right">
+                        <label for="profileAge">Edad :</label>
+                    </div>
+                    <div class="col-sm-3 mb-3 mb-sm-0">
+                        <input type="text" id="profileAge" class="form-control form-control-user"
+                             name="profileAge" placeholder="{{ edad }}" disabled>
+                    </div>
+
+                    <div class="col-sm-11 mb-11 mb-sm-0 text-right">
+                        <label for="profileAge"></label>
+                    </div>
+
+                    <div class="col-sm-2 mb-2 mb-sm-0 text-right">
+                        <label for="profileCountry">País :</label>
+                    </div>
+                    <div class="col-sm-3 mb-3 mb-sm-0">
+                        <input type="text" id="profileCountry" class="form-control form-control-user"
+                            name="profileCountry" placeholder="{{ pais }}" disabled>
+                    </div>
+                    <div class="col-sm-2 mb-2 mb-sm-0 text-right">
+                        <label for="profileDate">Fecha Creación :</label>
+                    </div>
+                    <div class="col-sm-3 mb-3 mb-sm-0">
+                        <input type="text" id="profileDate" class="form-control form-control-user"
+                             name="profileDate" placeholder="{{ fecha }}" disabled>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+{% endblock %}

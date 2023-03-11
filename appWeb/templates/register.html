@@ -36,21 +36,14 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Crea una Cuenta!</h1>
                             </div>
-                            <form class="user">
+                            <!-- <form class="user"> -->
+                            <form method="get" action="/create" class="user">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="createUserId"
                                             placeholder="Id Usuario" name="createUserId">
                                     </div>
-                                    <!--
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="createGender"
-                                            placeholder="Género" name="createGender">
-                                    </div>-->
 
-                                    <div class="col-sm-0 text-right">
-                                        <label for="createGender" ></label>
-                                    </div>
                                     <div class="col-sm-6">
                                         <input list="createGenders" class="form-control form-control-user" id="createGender" name="createGender" placeholder="Género"/>
                                         <datalist id="createGenders">
@@ -58,22 +51,98 @@
                                             <option value='m'>Masculino</option>
                                         </datalist>
                                     </div>
-
-
                                 </div>
+
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="number" class="form-control form-control-user"
-                                            id="createAge" placeholder="Edad" name="createAge " min="10" max="120">
+                                            id="createAge" placeholder="Edad" name="createAge" min="10" max="120">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control form-control-user"
                                             id="createCountry" placeholder="País" name="createCountry">
                                     </div>
                                 </div>
-                                <a href="{{ url_for('login') }}" class="btn btn-primary btn-user btn-block">
-                                    Crear Cuenta
-                                </a>
+
+                                <hr>
+
+                                <div class="p-7">
+
+                                    <div class="text-center">
+                                        <h6 class="m-0 text-primary">Top 10 Canciones Más Populares</h6>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table-bordered" id="tableTop10" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">Artista</th>
+                                                        <th class="text-center">Canción</th>
+                                                        <th class="text-center">Me gusta</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{ top10[0][1] }}</td>
+                                                        <td>{{ top10[0][3] }}</td>
+                                                        <td class="text-center"><input type="checkbox" id="cbox1" name="cbox1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ top10[1][1] }}</td>
+                                                        <td>{{ top10[1][3] }}</td>
+                                                        <td class="text-center"><input type="checkbox" id="cbox2" name="cbox2"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ top10[2][1] }}</td>
+                                                        <td>{{ top10[2][3] }}</td>
+                                                        <td class="text-center"><input type="checkbox" id="cbox3" name="cbox3"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ top10[3][1] }}</td>
+                                                        <td>{{ top10[3][3] }}</td>
+                                                        <td class="text-center"><input type="checkbox" id="cbox4" name="cbox4"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ top10[4][1] }}</td>
+                                                        <td>{{ top10[4][3] }}</td>
+                                                        <td class="text-center"><input type="checkbox" id="cbox5" name="cbox5"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ top10[5][1] }}</td>
+                                                        <td>{{ top10[5][3] }}</td>
+                                                        <td class="text-center"><input type="checkbox" id="cbox6" name="cbox6"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ top10[6][1] }}</td>
+                                                        <td>{{ top10[6][3] }}</td>
+                                                        <td class="text-center"><input type="checkbox" id="cbox7" name="cbox7"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ top10[7][1] }}</td>
+                                                        <td>{{ top10[7][3] }}</td>
+                                                        <td class="text-center"><input type="checkbox" id="cbox8" name="cbox8"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ top10[8][1] }}</td>
+                                                        <td>{{ top10[8][3] }}</td>
+                                                        <td class="text-center"><input type="checkbox" id="cbox9" name="cbox9"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ top10[9][1] }}</td>
+                                                        <td>{{ top10[9][3] }}</td>
+                                                        <td class="text-center"><input type="checkbox" id="cbox10" name="cbox10"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" value="Crear Usuario" name="createButton" class="btn btn-primary btn-user btn-block"/>
+                                </div>
                             </form>
                             <hr>
                             <div class="text-center">

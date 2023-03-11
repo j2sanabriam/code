@@ -109,7 +109,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{ url_for('login') }}">
+                                <a class="dropdown-item" href="{{ url_for('profile') }}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Perfil
                                 </a>
@@ -120,7 +120,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ url_for('login') }}">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    Cerrar Sesión
                                 </a>
                             </div>
                         </li>
@@ -133,40 +133,189 @@
                 <!-- Begin Page Content -->
                 <div class="container">
                     <div class="card o-hidden border-0 shadow-lg my-5">
-                        <div class="col-lg-5.5">
-                            <div class="p-5">
-                                <div class="text-left">
-                                    <h4>Tus Artistas Favoritos</h4>
-                                    <hr>
-                                </div>
+                        <div class="form-group row">
+                            <div class="col-lg-4">
+                                <div class="p-4">
 
+                                    <div class="card-header py-3 text-center">
+                                        <h6 class="m-0 font-weight-bold text-primary">Tus Artistas Favoritos</h6>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table-bordered" id="tableFavorites" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Artista</th>
+                                                        <th>Conteo</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{ favorites[0][1] }}</td>
+                                                        <td>{{ favorites[0][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ favorites[1][1] }}</td>
+                                                        <td>{{ favorites[1][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ favorites[2][1] }}</td>
+                                                        <td>{{ favorites[2][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ favorites[3][1] }}</td>
+                                                        <td>{{ favorites[3][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ favorites[4][1] }}</td>
+                                                        <td>{{ favorites[4][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ favorites[5][1] }}</td>
+                                                        <td>{{ favorites[5][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ favorites[6][1] }}</td>
+                                                        <td>{{ favorites[6][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ favorites[7][1] }}</td>
+                                                        <td>{{ favorites[7][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ favorites[8][1] }}</td>
+                                                        <td>{{ favorites[8][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ favorites[9][1] }}</td>
+                                                        <td>{{ favorites[9][2] }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="p-4">
+                                    <div class="card-header py-3 text-center">
+                                        <h6 class="m-0 font-weight-bold text-primary">Te Recomendamos</h6>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table-bordered" id="tableRecomender" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Artista</th>
+                                                        <th>Rating</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{ recommd[0][1] }}</td>
+                                                        <td>{{ recommd[0][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recommd[1][1] }}</td>
+                                                        <td>{{ recommd[1][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recommd[2][1] }}</td>
+                                                        <td>{{ recommd[2][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recommd[3][1] }}</td>
+                                                        <td>{{ recommd[3][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recommd[4][1] }}</td>
+                                                        <td>{{ recommd[4][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recommd[5][1] }}</td>
+                                                        <td>{{ recommd[5][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recommd[6][1] }}</td>
+                                                        <td>{{ recommd[6][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recommd[7][1] }}</td>
+                                                        <td>{{ recommd[7][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recommd[8][1] }}</td>
+                                                        <td>{{ recommd[8][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recommd[9][1] }}</td>
+                                                        <td>{{ recommd[9][2] }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <div class="col-lg-4">
+                                 <div class="p-4">
+                                    <div class="card-header py-3 text-center">
+                                        <h6 class="m-0 font-weight-bold text-primary">Usuarios Similares</h6>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table-bordered" id="tableUsers" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Usuario</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{ similarUsers[0][0] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ similarUsers[1][0] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ similarUsers[2][0] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ similarUsers[3][0] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ similarUsers[4][0] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ similarUsers[5][0] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ similarUsers[6][0] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ similarUsers[7][0] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ similarUsers[8][0] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ similarUsers[9][0] }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card o-hidden border-0 shadow-lg my-5">
-                        <div class="col-lg-5.5">
-                            <div class="p-5">
-                                <div class="text-left">
-                                    <h4>Te Recomendamos</h4>
-                                    <hr>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card o-hidden border-0 shadow-lg my-5">
-                        <div class="col-lg-5.5">
-                            <div class="p-5">
-                                <div class="text-left">
-                                    <h4>A usuario como tu también le gustaron</h4>
-                                    <hr>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
                 <!-- /.container-fluid -->
