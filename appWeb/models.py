@@ -1,5 +1,4 @@
 import pandas as pd
-from prediction_model import PredictionModel
 from joblib import load
 
 
