@@ -24,16 +24,12 @@ def login():
     user_country = ""
     user_date = ""
 
-    print(type(request))
-    print(request)
-    print(request.args)
-
-    print("Ingresa Get")
     return render_template("login.html")
+
 
 @app.route("/create", methods=['GET'])
 def create():
-    global users_db, user_id, user_gender, user_age, user_country, user_date, url
+    global users_db, user_id, user_gender, user_age, user_country, user_date
     # limpiar variables para login con usuario nuevo
     user_id = ""
     user_gender = ""
@@ -47,6 +43,17 @@ def create():
     crea_age = request.args.get('createAge')
     crea_country = request.args.get('createCountry')
 
+    crea_id_artist_1 = request.args.get('createIdArtist1')
+    crea_id_artist_2 = request.args.get('createIdArtist2')
+    crea_id_artist_3 = request.args.get('createIdArtist3')
+    crea_id_artist_4 = request.args.get('createIdArtist4')
+    crea_id_artist_5 = request.args.get('createIdArtist5')
+    crea_name_artist_1 = request.args.get('createNameArtist1')
+    crea_name_artist_2 = request.args.get('createNameArtist2')
+    crea_name_artist_3 = request.args.get('createNameArtist3')
+    crea_name_artist_4 = request.args.get('createNameArtist4')
+    crea_name_artist_5 = request.args.get('createNameArtist5')
+
     # Si algún valor está vacío, genera mensaje de error y no crea usuario
     if not crea_user_id or not crea_gender or not crea_age or not crea_country:
         return render_template("404.html", mensaje="Datos Incompletos")
@@ -59,14 +66,25 @@ def create():
             # Fecha de creación en string
             today = date.today()
             crea_date = today.strftime('%b') + " " + str(today.strftime('%d')) + ", " + str(today.strftime('%Y'))
-
             # Inserta registro nuevo usuario a dataframe
             new_row = {'#id': crea_user_id, 'gender': crea_gender, 'age': float(crea_age), 'country': crea_country,
                        'registered': crea_date}
             users_db = users_db.append(new_row, ignore_index=True)
-
             # Guarda dataframe a archivo plano
-            users_db.to_csv(url, sep="\t", index=False)
+            users_db.to_csv("./static/data/userid-profile.tsv", sep="\t", index=False)
+
+            # Guarda artista favoritos usuarios nuevo
+            if crea_id_artist_1 and crea_name_artist_1:
+                mdl.insertFavorite(crea_user_id, crea_id_artist_1, crea_name_artist_1)
+            if crea_id_artist_2 and crea_name_artist_2:
+                mdl.insertFavorite(crea_user_id, crea_id_artist_2, crea_name_artist_2)
+            if crea_id_artist_3 and crea_name_artist_3:
+                mdl.insertFavorite(crea_user_id, crea_id_artist_3, crea_name_artist_3)
+            if crea_id_artist_4 and crea_name_artist_4:
+                mdl.insertFavorite(crea_user_id, crea_id_artist_4, crea_name_artist_4)
+            if crea_id_artist_5 and crea_name_artist_5:
+                mdl.insertFavorite(crea_user_id, crea_id_artist_5, crea_name_artist_5)
+
             return render_template("login.html")
 
 
@@ -80,10 +98,6 @@ def register():
 def index():
     global users_db, user_id, user_age, user_gender, user_country, user_date
 
-    print(type(request))
-    print(request)
-    print(request.args)
-
     if user_id == "":
         user_id = request.args.get('loginUser')
 
@@ -96,12 +110,16 @@ def index():
 
         profile_img = mdl.getProfileImg(user_gender)
 
-        fav = mdl.getFavoriteArts()
-        rec = mdl.getRecomendations()
-        sim_users = mdl.getSimilarUsers()
+        recomm_user = mdl.getRecomendationsUser(user_id)
+        neighbors_user = mdl.getNeighborsUser(user_id)
 
-        return render_template("index.html", usuario=user_id, imagen=profile_img, favorites=fav, recommd=rec,
-                           similarUsers=sim_users)
+        recomm_item = mdl.getRecomendationsItem(user_id)
+        favorites = mdl.getFavoriteArts(user_id)
+        neighbors_item = mdl.getNeighborsItem(favorites)
+
+        return render_template("index.html", usuario=user_id, imagen=profile_img, recom_user=recomm_user,
+                               neighbors_user=neighbors_user, recom_item=recomm_item, favorites=favorites,
+                               neighbors_item=neighbors_item)
     else:
         return render_template("404.html", mensaje="Usuario No Existe")
 

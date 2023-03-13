@@ -69,72 +69,166 @@
                                 <div class="p-7">
 
                                     <div class="text-center">
-                                        <h6 class="m-0 text-primary">Top 10 Canciones Más Populares</h6>
+                                        <h3 class="h6 text-gray-900 mb-4">Selecciona tus 5 artistas favoritos</h3>
                                     </div>
 
-                                    <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table class="table-bordered" id="tableTop10" width="100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center">Artista</th>
-                                                        <th class="text-center">Canción</th>
-                                                        <th class="text-center">Me gusta</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>{{ top10[0][1] }}</td>
-                                                        <td>{{ top10[0][3] }}</td>
-                                                        <td class="text-center"><input type="checkbox" id="cbox1" name="cbox1"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ top10[1][1] }}</td>
-                                                        <td>{{ top10[1][3] }}</td>
-                                                        <td class="text-center"><input type="checkbox" id="cbox2" name="cbox2"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ top10[2][1] }}</td>
-                                                        <td>{{ top10[2][3] }}</td>
-                                                        <td class="text-center"><input type="checkbox" id="cbox3" name="cbox3"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ top10[3][1] }}</td>
-                                                        <td>{{ top10[3][3] }}</td>
-                                                        <td class="text-center"><input type="checkbox" id="cbox4" name="cbox4"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ top10[4][1] }}</td>
-                                                        <td>{{ top10[4][3] }}</td>
-                                                        <td class="text-center"><input type="checkbox" id="cbox5" name="cbox5"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ top10[5][1] }}</td>
-                                                        <td>{{ top10[5][3] }}</td>
-                                                        <td class="text-center"><input type="checkbox" id="cbox6" name="cbox6"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ top10[6][1] }}</td>
-                                                        <td>{{ top10[6][3] }}</td>
-                                                        <td class="text-center"><input type="checkbox" id="cbox7" name="cbox7"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ top10[7][1] }}</td>
-                                                        <td>{{ top10[7][3] }}</td>
-                                                        <td class="text-center"><input type="checkbox" id="cbox8" name="cbox8"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ top10[8][1] }}</td>
-                                                        <td>{{ top10[8][3] }}</td>
-                                                        <td class="text-center"><input type="checkbox" id="cbox9" name="cbox9"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ top10[9][1] }}</td>
-                                                        <td>{{ top10[9][3] }}</td>
-                                                        <td class="text-center"><input type="checkbox" id="cbox10" name="cbox10"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <input list="id_artists" type="text" class="form-control form-control-user"
+                                                id="createIdArtist1" placeholder="Id Artista 1" name="createIdArtist1">
+                                            <datalist id="id_artists">
+                                                <option value='a74b1b7f-71a5-4011-9441-d0b5e4122711'>Radiohead</option>
+                                                <option value='b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d'>The Beatles</option>
+                                                <option value='b7ffd2af-418f-4be2-bdd1-22f8b48613da'>Nine Inch Nails</option>
+                                                <option value='9c9f1380-2516-4fc9-a3e6-f9f61941d090'>Muse</option>
+                                                <option value='cc197bad-dc9c-440d-a5b5-d52ba2e14234'>Coldplay</option>
+                                                <option value='8538e728-ca0b-4321-b7e5-cff6565dd4c0'>Depeche Mode</option>
+                                                <option value='0039c7ae-e1a7-4a7d-9b49-0cbc716821a6'>Death Cab For Cutie</option>
+                                                <option value='83d91898-7763-47d7-b03b-b92132375c47'>Pink Floyd</option>
+                                                <option value='847e8284-8582-4b0e-9c26-b042a4f49e57'>Placebo</option>
+                                                <option value='03ad1736-b7c9-412a-b442-82536d63a5c4'>Elliott Smith</option>
+                                                <option value='69ee3720-a7cb-4402-b48d-a02c366f2bcf'>The Cure</option>
+                                                <option value='5441c29d-3602-4898-b1a1-b77fa23b8e50'>David Bowie</option>
+                                                <option value='95e1ead9-4d31-4808-a7ac-32c3614c116b'>The Killers</option>
+                                                <option value='164f0d73-1234-4e2c-8743-d77bf2191051'>Kanye West</option>
+                                                <option value='40f5d9e4-2de7-4f2d-ad41-e31a9a9fea27'>The Smiths</option>
+                                                <option value='8bfac288-ccc5-448d-9573-c33ea2aa5c30'>Red Hot Chili Peppers</option>
+                                                <option value='45a663b5-b1cb-4a91-bff6-2bef7bbfdd76'>Britney Spears</option>
+                                                <option value='65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab'>Metallica</option>
+                                                <option value='b23e8a63-8f47-4882-b55b-df2c92ef400e'>Interpol</option>
+                                                <option value='f6f2326f-6b25-4170-b89d-e235b25508e8'>Sigur Rós</option>
+                                                <option value='87c5dedd-371d-4a53-9f7f-80522fb7f3cb'>Björk</option>
+                                                <option value='52074ba6-e495-4ef3-9bb4-0703888a9f68'>Arcade Fire</option>
+                                                <option value='a96ac800-bfcb-412a-8a63-0a98df600700'>Modest Mouse</option>
+                                                <option value='8c538f11-c141-4588-8ecb-931083524186'>Bloc Party</option>
+                                                <option value='a3cb23fc-acd3-4ce0-8f36-1e5aa6a18432'>U2</option>
+                                                <option value='39ab1aed-75e0-4140-bd47-540276886b60'>Oasis</option>
+                                                <option value='bf710b71-48e5-4e15-9bd6-96debb2e4e98'>The Knife</option>
+                                                <option value='cb67438a-7f50-4f2b-a6f1-2bb2729fd538'>Air</option>
+                                                <option value='056e4f3e-d505-4dad-8ec1-d04f521cbb56'>Daft Punk</option>
+                                                <option value='ba0d6274-db14-4ef5-b28d-657ebde1a396'>The Smashing Pumpkins</option>
+                                                <option value='e5c7b94f-e264-473c-bb0f-37c85d4d5c70'>Belle And Sebastian</option>
+                                                <option value='32b90c92-9978-4a07-90eb-caa4b22f4907'>Black Rebel Motorcycle Club</option>
+                                                <option value='66fc5bf8-daa4-4241-b378-9bc9077939d2'>Tool</option>
+                                                <option value='ada7a83c-e3e1-40f1-93f9-3e73dbc9298a'>Arctic Monkeys</option>
+                                                <option value='11ae9fbb-f3d7-4a47-936f-4c0a04d3b3b5'>The White Stripes</option>
+                                                <option value='b6b2bb8d-54a9-491f-9607-7b546023b433'>Pixies</option>
+                                                <option value='cc0b7089-c08d-4c10-b6b0-873582c17fd6'>System Of A Down</option>
+                                                <option value='5b11f4ce-a62d-471e-81fc-a69a8278c7da'>Nirvana</option>
+                                                <option value='aa7a2827-f74b-473c-bd79-03d065835cf7'>Franz Ferdinand</option>
+                                                <option value='01d3c51b-9b98-418a-8d8e-37f6fab59d8c'>Sufjan Stevens</option>
+                                                <option value='5cbef01b-cc35-4f52-af7b-d0df0c4f61b9'>Sonic Youth</option>
+                                                <option value='9a58fda3-f4ed-4080-a3a5-f457aac9fcdd'>Joy Division</option>
+                                                <option value='79239441-bfd5-4981-a70c-55c3f15c1287'>Madonna</option>
+                                                <option value='b071f9fa-14b0-4217-8e97-eb41da73f598'>The Rolling Stones</option>
+                                                <option value='c0b2500e-0cef-4130-869d-732b23ed9df5'>Tori Amos</option>
+                                                <option value='9efff43b-3b29-4082-824e-bc82f646f93d'>The Doors</option>
+                                                <option value='a66999a7-ae5c-460e-ba94-1a01143ae847'>Snow Patrol</option>
+                                                <option value='10adbe5e-a2c0-4bf3-8249-2b4cbf6e6ca8'>Massive Attack</option>
+                                                <option value='309c62ba-7a22-4277-9f67-4a162526d18a'>Beck</option>
+                                                <option value='78f797e3-4913-4026-aad0-1cd858bd735b'>Bright Eyes</option>
+                                            </datalist>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <input list="name_artists"  type="text" class="form-control form-control-user"
+                                                id="createNameArtist1" placeholder="Nombre Artista 1" name="createNameArtist1">
+                                            <datalist id="name_artists">
+                                                <option value='Radiohead'>a74b1b7f-71a5-4011-9441-d0b5e4122711</option>
+                                                <option value='The Beatles'>b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d</option>
+                                                <option value='Nine Inch Nails'>b7ffd2af-418f-4be2-bdd1-22f8b48613da</option>
+                                                <option value='Muse'>9c9f1380-2516-4fc9-a3e6-f9f61941d090</option>
+                                                <option value='Coldplay'>cc197bad-dc9c-440d-a5b5-d52ba2e14234</option>
+                                                <option value='Depeche Mode'>8538e728-ca0b-4321-b7e5-cff6565dd4c0</option>
+                                                <option value='Death Cab For Cutie'>0039c7ae-e1a7-4a7d-9b49-0cbc716821a6</option>
+                                                <option value='Pink Floyd'>83d91898-7763-47d7-b03b-b92132375c47</option>
+                                                <option value='Placebo'>847e8284-8582-4b0e-9c26-b042a4f49e57</option>
+                                                <option value='Elliott Smith'>03ad1736-b7c9-412a-b442-82536d63a5c4</option>
+                                                <option value='The Cure'>69ee3720-a7cb-4402-b48d-a02c366f2bcf</option>
+                                                <option value='David Bowie'>5441c29d-3602-4898-b1a1-b77fa23b8e50</option>
+                                                <option value='The Killers'>95e1ead9-4d31-4808-a7ac-32c3614c116b</option>
+                                                <option value='Kanye West'>164f0d73-1234-4e2c-8743-d77bf2191051</option>
+                                                <option value='The Smiths'>40f5d9e4-2de7-4f2d-ad41-e31a9a9fea27</option>
+                                                <option value='Red Hot Chili Peppers'>8bfac288-ccc5-448d-9573-c33ea2aa5c30</option>
+                                                <option value='Britney Spears'>45a663b5-b1cb-4a91-bff6-2bef7bbfdd76</option>
+                                                <option value='Metallica'>65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab</option>
+                                                <option value='Interpol'>b23e8a63-8f47-4882-b55b-df2c92ef400e</option>
+                                                <option value='Sigur Rós'>f6f2326f-6b25-4170-b89d-e235b25508e8</option>
+                                                <option value='Björk'>87c5dedd-371d-4a53-9f7f-80522fb7f3cb</option>
+                                                <option value='Arcade Fire'>52074ba6-e495-4ef3-9bb4-0703888a9f68</option>
+                                                <option value='Modest Mouse'>a96ac800-bfcb-412a-8a63-0a98df600700</option>
+                                                <option value='Bloc Party'>8c538f11-c141-4588-8ecb-931083524186</option>
+                                                <option value='U2'>a3cb23fc-acd3-4ce0-8f36-1e5aa6a18432</option>
+                                                <option value='Oasis'>39ab1aed-75e0-4140-bd47-540276886b60</option>
+                                                <option value='The Knife'>bf710b71-48e5-4e15-9bd6-96debb2e4e98</option>
+                                                <option value='Air'>cb67438a-7f50-4f2b-a6f1-2bb2729fd538</option>
+                                                <option value='Daft Punk'>056e4f3e-d505-4dad-8ec1-d04f521cbb56</option>
+                                                <option value='The Smashing Pumpkins'>ba0d6274-db14-4ef5-b28d-657ebde1a396</option>
+                                                <option value='Belle And Sebastian'>e5c7b94f-e264-473c-bb0f-37c85d4d5c70</option>
+                                                <option value='Black Rebel Motorcycle Club'>32b90c92-9978-4a07-90eb-caa4b22f4907</option>
+                                                <option value='Tool'>66fc5bf8-daa4-4241-b378-9bc9077939d2</option>
+                                                <option value='Arctic Monkeys'>ada7a83c-e3e1-40f1-93f9-3e73dbc9298a</option>
+                                                <option value='The White Stripes'>11ae9fbb-f3d7-4a47-936f-4c0a04d3b3b5</option>
+                                                <option value='Pixies'>b6b2bb8d-54a9-491f-9607-7b546023b433</option>
+                                                <option value='System Of A Down'>cc0b7089-c08d-4c10-b6b0-873582c17fd6</option>
+                                                <option value='Nirvana'>5b11f4ce-a62d-471e-81fc-a69a8278c7da</option>
+                                                <option value='Franz Ferdinand'>aa7a2827-f74b-473c-bd79-03d065835cf7</option>
+                                                <option value='Sufjan Stevens'>01d3c51b-9b98-418a-8d8e-37f6fab59d8c</option>
+                                                <option value='Sonic Youth'>5cbef01b-cc35-4f52-af7b-d0df0c4f61b9</option>
+                                                <option value='Joy Division'>9a58fda3-f4ed-4080-a3a5-f457aac9fcdd</option>
+                                                <option value='Madonna'>79239441-bfd5-4981-a70c-55c3f15c1287</option>
+                                                <option value='The Rolling Stones'>b071f9fa-14b0-4217-8e97-eb41da73f598</option>
+                                                <option value='Tori Amos'>c0b2500e-0cef-4130-869d-732b23ed9df5</option>
+                                                <option value='The Doors'>9efff43b-3b29-4082-824e-bc82f646f93d</option>
+                                                <option value='Snow Patrol'>a66999a7-ae5c-460e-ba94-1a01143ae847</option>
+                                                <option value='Massive Attack'>10adbe5e-a2c0-4bf3-8249-2b4cbf6e6ca8</option>
+                                                <option value='Beck'>309c62ba-7a22-4277-9f67-4a162526d18a</option>
+                                                <option value='Bright Eyes'>78f797e3-4913-4026-aad0-1cd858bd735b</option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <input list="id_artists" type="text" class="form-control form-control-user"
+                                                id="createIdArtist2" placeholder="Id Artista 2" name="createIdArtist2">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input list="name_artists"  type="text" class="form-control form-control-user"
+                                                id="createNameArtist2" placeholder="Nombre Artista 2" name="createNameArtist2">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <input list="id_artists" type="text" class="form-control form-control-user"
+                                                id="createIdArtist3" placeholder="Id Artista 3" name="createIdArtist3">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input list="name_artists"  type="text" class="form-control form-control-user"
+                                                id="createNameArtist3" placeholder="Nombre Artista 3" name="createNameArtist3">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <input list="id_artists" type="text" class="form-control form-control-user"
+                                                id="createIdArtist4" placeholder="Id Artista 4" name="createIdArtist4">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input list="name_artists"  type="text" class="form-control form-control-user"
+                                                id="createNameArtist4" placeholder="Nombre Artista 4" name="createNameArtist4">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <input list="id_artists" type="text" class="form-control form-control-user"
+                                                id="createIdArtist5" placeholder="Id Artista 5" name="createIdArtist5">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input list="name_artists"  type="text" class="form-control form-control-user"
+                                                id="createNameArtist5" placeholder="Nombre Artista 5" name="createNameArtist5">
                                         </div>
                                     </div>
 

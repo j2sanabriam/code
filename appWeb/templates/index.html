@@ -132,8 +132,191 @@
                 {% block contenido %}
                 <!-- Begin Page Content -->
                 <div class="container">
+
+                    <!-- Recomendaciones por Usuario -->
                     <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-header py-3 text-center">
+                            <h4 class="m-0 font-weight-bold text-primary">Recomendaciones por Usuario</h4>
+                        </div>
                         <div class="form-group row">
+
+                            <!-- Artistas recomendados por usuario -->
+                            <div class="col-lg-6">
+                                <div class="p-4">
+                                    <div class="card-header py-3 text-center">
+                                        <h6 class="m-0 font-weight-bold text-primary">Artistas Recomendados</h6>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table-bordered" id="tableRecomender" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">Artista</th>
+                                                        <th class="text-center">Rating</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{ recom_user[0][1] }}</td>
+                                                        <td>{{ recom_user[0][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_user[1][1] }}</td>
+                                                        <td>{{ recom_user[1][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_user[2][1] }}</td>
+                                                        <td>{{ recom_user[2][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_user[3][1] }}</td>
+                                                        <td>{{ recom_user[3][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_user[4][1] }}</td>
+                                                        <td>{{ recom_user[4][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_user[5][1] }}</td>
+                                                        <td>{{ recom_user[5][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_user[6][1] }}</td>
+                                                        <td>{{ recom_user[6][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_user[7][1] }}</td>
+                                                        <td>{{ recom_user[7][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_user[8][1] }}</td>
+                                                        <td>{{ recom_user[8][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_user[9][1] }}</td>
+                                                        <td>{{ recom_user[9][2] }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <!-- Usuario Similares -->
+                             <div class="col-lg-6">
+                                 <div class="p-4">
+                                    <div class="card-header py-3 text-center">
+                                        <h6 class="m-0 font-weight-bold text-primary">Usuarios Similares</h6>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table-bordered" id="tableUsers" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">Usuario</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{ neighbors_user[0] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ neighbors_user[1] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ neighbors_user[2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ neighbors_user[3] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ neighbors_user[4] }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Recomendaciones por Item -->
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-header py-3 text-center">
+                            <h4 class="m-0 font-weight-bold text-primary">Recomendaciones por Ítem</h4>
+                        </div>
+                        <div class="form-group row">
+
+                            <!-- Artistas recomendades por Item -->
+                            <div class="col-lg-4">
+                                <div class="p-4">
+                                    <div class="card-header py-3 text-center">
+                                        <h6 class="m-0 font-weight-bold text-primary">Artistas Recomendados</h6>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table-bordered" id="tableRecomender" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">Artista</th>
+                                                        <th class="text-center">Rating</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{ recom_item[0][1] }}</td>
+                                                        <td>{{ recom_item[0][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_item[1][1] }}</td>
+                                                        <td>{{ recom_item[1][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_item[2][1] }}</td>
+                                                        <td>{{ recom_item[2][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_item[3][1] }}</td>
+                                                        <td>{{ recom_item[3][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_item[4][1] }}</td>
+                                                        <td>{{ recom_item[4][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_item[5][1] }}</td>
+                                                        <td>{{ recom_item[5][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_item[6][1] }}</td>
+                                                        <td>{{ recom_item[6][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_item[7][1] }}</td>
+                                                        <td>{{ recom_item[7][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_item[8][1] }}</td>
+                                                        <td>{{ recom_item[8][2] }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{ recom_item[9][1] }}</td>
+                                                        <td>{{ recom_item[9][2] }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Artistas Favoritos del usuario -->
                             <div class="col-lg-4">
                                 <div class="p-4">
 
@@ -146,8 +329,8 @@
                                             <table class="table-bordered" id="tableFavorites" width="100%" cellspacing="0">
                                                 <thead>
                                                     <tr>
-                                                        <th>Artista</th>
-                                                        <th>Conteo</th>
+                                                        <th class="text-center">Artista</th>
+                                                        <th class="text-center">Conteo</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -199,73 +382,11 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-4">
-                                <div class="p-4">
-                                    <div class="card-header py-3 text-center">
-                                        <h6 class="m-0 font-weight-bold text-primary">Te Recomendamos</h6>
-                                    </div>
-
-                                    <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table class="table-bordered" id="tableRecomender" width="100%" cellspacing="0">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Artista</th>
-                                                        <th>Rating</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>{{ recommd[0][1] }}</td>
-                                                        <td>{{ recommd[0][2] }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ recommd[1][1] }}</td>
-                                                        <td>{{ recommd[1][2] }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ recommd[2][1] }}</td>
-                                                        <td>{{ recommd[2][2] }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ recommd[3][1] }}</td>
-                                                        <td>{{ recommd[3][2] }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ recommd[4][1] }}</td>
-                                                        <td>{{ recommd[4][2] }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ recommd[5][1] }}</td>
-                                                        <td>{{ recommd[5][2] }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ recommd[6][1] }}</td>
-                                                        <td>{{ recommd[6][2] }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ recommd[7][1] }}</td>
-                                                        <td>{{ recommd[7][2] }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ recommd[8][1] }}</td>
-                                                        <td>{{ recommd[8][2] }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>{{ recommd[9][1] }}</td>
-                                                        <td>{{ recommd[9][2] }}</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <!-- Artistas similares por item-->
                              <div class="col-lg-4">
                                  <div class="p-4">
                                     <div class="card-header py-3 text-center">
-                                        <h6 class="m-0 font-weight-bold text-primary">Usuarios Similares</h6>
+                                        <h6 class="m-0 font-weight-bold text-primary">Artistas Similares</h6>
                                     </div>
 
                                     <div class="card-body">
@@ -273,39 +394,39 @@
                                             <table class="table-bordered" id="tableUsers" width="100%" cellspacing="0">
                                                 <thead>
                                                     <tr>
-                                                        <th>Usuario</th>
+                                                        <th class="text-center">Artista</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>{{ similarUsers[0][0] }}</td>
+                                                        <td>{{ neighbors_item[0] }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>{{ similarUsers[1][0] }}</td>
+                                                        <td>{{ neighbors_item[1] }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>{{ similarUsers[2][0] }}</td>
+                                                        <td>{{ neighbors_item[2] }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>{{ similarUsers[3][0] }}</td>
+                                                        <td>{{ neighbors_item[3] }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>{{ similarUsers[4][0] }}</td>
+                                                        <td>{{ neighbors_item[4] }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>{{ similarUsers[5][0] }}</td>
+                                                        <td>{{ neighbors_item[5] }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>{{ similarUsers[6][0] }}</td>
+                                                        <td>{{ neighbors_item[6] }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>{{ similarUsers[7][0] }}</td>
+                                                        <td>{{ neighbors_item[7] }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>{{ similarUsers[8][0] }}</td>
+                                                        <td>{{ neighbors_item[8] }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>{{ similarUsers[9][0] }}</td>
+                                                        <td>{{ neighbors_item[9] }}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
